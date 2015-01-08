@@ -7,26 +7,23 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>
-            <?php
-                $myvar = $_GET['p'];
-                //$myvar = true;
-                //$myvar = 'string';
-                //$myvar = 10;
-                if ( $myvar === '1') {
-                    echo 'Num 1';
-                } else {
-                    echo 'my page title';
-                }
-            ?>
-        </title>
+        <title></title>
     </head>
     <body>
-        <?php
-        /*
-         * phpinfo();
-         */
-        echo '<p>Hey hows it going</p>';
+        <h1>
+        <?php        
+        $myvar = filter_input(INPUT_GET, 'p');
+        
+         if ( $myvar === '1' ) {
+            echo '<em>Num 1</em>'; 
+         } 
+         else if ($myvar === '2') {
+             echo '<em>Num 2</em>';
+         }
+         else {
+            echo 'my page title';
+         }   
         ?>
+        </h1> 
     </body>
 </html>
