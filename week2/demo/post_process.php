@@ -21,6 +21,7 @@ and open the template in the editor.
                 echo $_POST['email'];
             }
         
+            include './validation.php'
         ?>
     </body>
 </html>
