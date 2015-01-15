@@ -11,11 +11,13 @@ and open the template in the editor.
     </head>
     <body>
         
-    <form action="post_process.php" method="post">
+     <form action="post_process.php" method="post">
             
             Name: <input name="fname" type="text" value="" />
             <br />
             Email: <input name="email" type="text" value="" />
+            <br />
+            number: <input name="number" type="number" value="" />
             
             
             <input type="submit" value="submit" />
