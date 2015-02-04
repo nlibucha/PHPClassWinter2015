@@ -16,9 +16,21 @@
         
 <form action="#" method="post">   
     <select name="cars">
-        <option value="ford" >ford</option>
-        <option value="honda">honda</option>
-        <option value="kia">kia</option>
+        <option value="ford" <?php
+        if ( $car == 'ford' ) {
+            echo $selected;
+        }
+        ?>>ford</option>
+        <option value="honda" <?php
+        if ( $car == 'honda' ) {
+            echo $selected;
+        }
+        ?>>honda</option>
+        <option value="kia" <?php
+        if ( $car == 'kia' ) {
+            echo $selected;
+        }
+        ?>>kia</option>
     </select>
             
 <br /><input type="submit" value="Submit" />
