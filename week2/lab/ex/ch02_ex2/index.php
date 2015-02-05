@@ -11,8 +11,13 @@
     <h1>Future Value Calculator</h1>
     <?php if (!empty($error_message)) { ?>
         <p class="error"><?php echo $error_message; ?></p>
-    <?php } // end if ?>
-    <form action="display_results.php" method="post">
+    <?php } // end if 
+    
+       $investment = '';
+       $interest_rate = '';
+       $years = '';
+      ?> 
+        <form action="display_results.php" method="post">
 
         <div id="data">
             <label>Investment Amount:</label>
