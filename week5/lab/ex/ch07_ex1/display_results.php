@@ -36,13 +36,22 @@
         <span><?php echo htmlspecialchars($phone); ?></span><br />
 
         <label>Heard From:</label>
-        <span><?php echo htmlspecialchars($heard_from); ?></span><br />
+        <span><?php echo ($heard_from); ?></span><br />
 
         <label>Send Updates:</label>
-        <span><?php echo htmlspecialchars($wants_updates); ?></span><br />
+        <span>
+        <?php
+               if ( $wants_updates == 'on' ) {
+            echo 'Yes';
+               }
+                else  echo 'No';
+        
+         
+              ?>
+        </span><br />
 
         <label>Contact Via:</label>
-        <span><?php echo htmlspecialchars($contact_via); ?></span><br /><br />
+        <span><?php echo ($contact_via); ?></span><br /><br />
 
         <span>Comments:</span><br />
         <span><?php echo htmlspecialchars($comments); ?></span><br />
