@@ -40,6 +40,9 @@
            and special offers?</p>
         <input type="checkbox" name="wants_updates"/>YES, I'd like to receive
         information about new products and special offers.<br />
+        <input type="checkbox" name="wants_updates2"/>No, I would not like to receive
+        information about new products and special offers.<br /> 
+        
 
         <p>Contact via:</p>
         <select name="contact_via">

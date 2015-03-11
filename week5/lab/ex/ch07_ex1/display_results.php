@@ -1,17 +1,21 @@
 <?php
     // get the data from the form
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $phone = $_POST['phone'];
-    $heard_from = $_POST['heard_from'];
-    $wants_updates = $_POST['wants_updates'];
-    $contact_via = $_POST['contact_via'];
-    $comments = $_POST['comments'];
-
-
+   
+        $email = filter_input (INPUT_POST, 'email');
+        $password = filter_input (INPUT_POST, 'password');
+        $phone_number = filter_input (INPUT_POST, 'phone');
+        $heard_from = filter_input (INPUT_POST, 'heard_from');
+        $contact_via = filter_input (INPUT_POST, 'contact_via');
+        $wants_updates = filter_input (INPUT_POST, 'wants_updates');
+        
+        $comments = filter_input (INPUT_POST, 'comments');
+        
+        
+        $error_message = '';
+        
+    // get the rest of the data for the form
     // for the heard_from radio buttons,
     // display a value of 'Unknown' if the user doesn't select a radio button
-
     // for the wants_updates check box,
     // display a value of 'Yes' or 'No'
 ?>
@@ -31,30 +35,30 @@
 
         <label>Password:</label>
         <span><?php echo htmlspecialchars($password); ?></span><br />
-
+        
         <label>Phone Number:</label>
-        <span><?php echo htmlspecialchars($phone); ?></span><br />
+        <span><?php echo htmlspecialchars($phone_number); ?></span><br />
 
         <label>Heard From:</label>
-        <span><?php echo ($heard_from); ?></span><br />
+        <span><?php   if (empty ($heard_from)){
+        echo "Unknown";}
+        echo $heard_from;
+         
+         ?></span><br />
 
         <label>Send Updates:</label>
-        <span>
-        <?php
-               if ( $wants_updates == 'on' ) {
-            echo 'Yes';
-               }
-                else  echo 'No';
-        
-         
-              ?>
-        </span><br />
+        <span><?php if (empty ($wants_updates)){
+        echo "No";
+        }
+        else {echo "yes";}
+     
+        ?></span><br />
 
         <label>Contact Via:</label>
-        <span><?php echo ($contact_via); ?></span><br /><br />
+        <span><?php echo htmlspecialchars($contact_via); ?></span><br /><br />
 
         <span>Comments:</span><br />
-        <span><?php echo htmlspecialchars($comments); ?></span><br />
+        <span><?php echo nl2br($comments); ?></span><br />
         
         <p>&nbsp;</p>
     </div>
